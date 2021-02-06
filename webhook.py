@@ -37,6 +37,7 @@ def makeResponse(req):
             condition= weather[i]['weather'][0]['description']
             break
     speech = "The forecast for"+city+ "for "+date+" is "+condition
+    print(speech)
     return speech
 
 if __name__ == '__main__':
