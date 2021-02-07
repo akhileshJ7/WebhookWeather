@@ -25,7 +25,7 @@ def makeResponse(req):
     result = req.get("queryResult")
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
-    date = parameters.get("date-time")
+    date = parameters.get("date")
     if city is None:
         return None
     r=requests.get('http://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=a11c6ca519c3170fb5c153f00f5f6296')
