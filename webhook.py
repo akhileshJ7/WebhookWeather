@@ -18,7 +18,6 @@ def webhook():
     res = json.dumps(res, indent=4)
     # print(res)
     r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
     return r
 
 def makeResponse(req):
@@ -36,11 +35,7 @@ def makeResponse(req):
             condition= weather[i]['weather'][0]['description']
             break
     speech = "The forecast for"+city+ "for "+date+" is "+condition
-    return {
-    "speech": speech,
-    "displayText": speech,
-    "source": "apiai-weather-webhook"
-    }
+    return speech
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
